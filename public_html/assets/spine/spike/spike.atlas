@@ -1,0 +1,27 @@
+
+spike.png
+size: 89,45
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+glow
+  rotate: false
+  xy: 41, 10
+  size: 30, 33
+  orig: 30, 33
+  offset: 0, 0
+  index: -1
+line-glow
+  rotate: true
+  xy: 73, 2
+  size: 41, 14
+  orig: 41, 14
+  offset: 0, 0
+  index: -1
+spike_main
+  rotate: false
+  xy: 2, 2
+  size: 37, 41
+  orig: 37, 41
+  offset: 0, 0
+  index: -1

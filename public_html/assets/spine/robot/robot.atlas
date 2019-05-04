@@ -1,0 +1,69 @@
+
+robot.png
+size: 855,220
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hand_bot
+  rotate: false
+  xy: 650, 11
+  size: 74, 134
+  orig: 74, 134
+  offset: 0, 0
+  index: -1
+Hand_top
+  rotate: false
+  xy: 558, 12
+  size: 90, 206
+  orig: 90, 206
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 2
+  size: 216, 215
+  orig: 216, 215
+  offset: 0, 0
+  index: -1
+body_main
+  rotate: false
+  xy: 726, 72
+  size: 127, 73
+  orig: 127, 73
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 219, 5
+  size: 26, 16
+  orig: 26, 16
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 219, 23
+  size: 226, 195
+  orig: 226, 195
+  offset: 0, 0
+  index: -1
+leg_bot
+  rotate: false
+  xy: 447, 21
+  size: 109, 197
+  orig: 109, 197
+  offset: 0, 0
+  index: -1
+leg_top
+  rotate: true
+  xy: 650, 147
+  size: 71, 196
+  orig: 71, 196
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 726, 35
+  size: 35, 75
+  orig: 35, 75
+  offset: 0, 0
+  index: -1

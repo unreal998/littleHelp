@@ -16,12 +16,12 @@ Object.defineProperty(GMPixi.other, 'Player', {
         this.level = o.level;
         this.block = o.level.blocks;
         this.button = o.level.button;
+        this.characterSpineAnimation = new PIXI.spine.Spine(PIXI.loader.resources['assets/spine/robot/robot.json'].spineData);
+        this.characterSpineAnimation.scale.x = 0.4;
+        this.characterSpineAnimation.scale.y = 0.05;
+        this.characterSpineAnimation.position.y = -19;
+        this.characterSpineAnimation.position.x = -50;
         this.characterMoved = false;
-        this.characterSpineAnimation = new PIXI.spine.Spine(PIXI.loader.resources['assets/spine/spineboy.json'].spineData);
-        this.characterSpineAnimation.scale.x = 0.7;
-        this.characterSpineAnimation.scale.y = 0.12;
-        this.characterSpineAnimation.position.y = 21;
-        this.characterSpineAnimation.position.x = 10;
         PIXI.Sprite.call(this).addChild(this.characterSpineAnimation);
 
         this.sx = 8 / GMPixi.Player('stand').width;
@@ -38,7 +38,7 @@ Object.defineProperty(GMPixi.other.Player, 'prototype', {
 Object.defineProperties(GMPixi.other.Player.prototype, {
     movespeed: {
         value: {
-            x: 3,
+            x: 5,
             y: 13,
             maxY: 20
         }
@@ -132,6 +132,16 @@ Object.defineProperties(GMPixi.other.Player.prototype, {
             if(!this.jump && this.vy === 0 && this.button.space) {
                 this.vy = -this.movespeed.y;
                 this.jump = true;
+                // if(this.characterJump) {
+                //     return;
+                // }
+                // this.characterSpineAnimation.state.setAnimation(0,"jump",false);
+                // this.characterJump = true;
+                // this.characterMoved = false;
+                // this.characterIdle = false;
+                // this.characterSpineAnimation.state.addListener({
+                //     complete: () => this.characterJump = false
+                // })
             }
             
             //updates hspeed base on inputs
@@ -145,18 +155,25 @@ Object.defineProperties(GMPixi.other.Player.prototype, {
                     this.setTexture(GMPixi.Player('run_' +
                             (this.pointer 
                                 = GMPixi.Math.next(this.pointer, 0, 13, 1))));
-                    if (this.characterMoved) {
+                    if (this.characterMoved ) {
                         return;
                     }
-                    this.characterSpineAnimation.state.setAnimation(0,"walk",true);
+                    this.characterSpineAnimation.state.setAnimation(0,"run",true);
+                    this.characterSpineAnimation.state.timeScale = 1.5;
                     this.characterMoved = true;
+                    this.characterIdle = false;
                 }
                 //if not moving horizontally
                 else {
-                    this.characterSpineAnimation.state.clearTracks();
                     this.characterMoved = false;
                     this.pointer = 0;
                     this.setTexture(GMPixi.Player('stand'));
+                    if (this.characterIdle) {
+                        return;
+                    }
+                    this.characterSpineAnimation.state.setAnimation(0,"idle",true);
+                    this.characterIdle = true;
+
                 }
             }
             

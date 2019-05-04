@@ -13,7 +13,13 @@ GMPixi.other = GMPixi.other || Object.defineProperty(GMPixi, 'other', {
 Object.defineProperty(GMPixi.other, 'Background', {
     value: function Background(o) {
         this.room = o.room;
-        PIXI.Sprite.call(this, GMPixi.sprite('bg'));
+        this.backgroundSpineAnimation = new PIXI.spine.Spine(PIXI.loader.resources['assets/spine/background/background.json'].spineData);
+        this.backgroundSpineAnimation.scale.x = 2;
+        this.backgroundSpineAnimation.scale.y = 2;
+        this.backgroundSpineAnimation.position.y = 120;
+        PIXI.Sprite.call(this, GMPixi.sprite('bg')).addChild(this.backgroundSpineAnimation);
+        this.backgroundSpineAnimation.state.setAnimation(0, "animation", true);
+        this.backgroundSpineAnimation.state.timeScale = 0.7;
         
     }
 }); 

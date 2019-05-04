@@ -19,7 +19,9 @@ window.onload = function() {
             'assets/sprite/title.png',
             'assets/sprite/youwin.png',
             'assets/sprite/empty.png',
-            'assets/spine/spineboy.json'
+            'assets/spine/robot/robot.json',
+            'assets/spine/background/background.json',
+            'assets/spine/spike/spike.json'
         ],
         preroom: function() {
             

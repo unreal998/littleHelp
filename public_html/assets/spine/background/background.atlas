@@ -1,0 +1,41 @@
+
+background.png
+size: 1825,1252
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back_forest
+  rotate: true
+  xy: 1536, 185
+  size: 1065, 287
+  orig: 1065, 287
+  offset: 0, 0
+  index: -1
+bg
+  rotate: true
+  xy: 2, 225
+  size: 1025, 1023
+  orig: 1025, 1023
+  offset: 0, 0
+  index: -1
+hill
+  rotate: true
+  xy: 1122, 10
+  size: 1240, 412
+  orig: 1240, 412
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 1536, 166
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+top_forest
+  rotate: false
+  xy: 2, 2
+  size: 1118, 221
+  orig: 1118, 221
+  offset: 0, 0
+  index: -1
